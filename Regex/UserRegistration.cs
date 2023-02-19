@@ -10,8 +10,12 @@ namespace Regexproblem
 {
     internal class UserRegistration
     {
-        public string FirstName = ("^[A-Z]{1}[a-z]{2,}$");
-        public string LastName = ("^[A-Z]{1}[a-z]{2,}$");
+        public string FirstName = "^[A-Z]{1}[a-z]{2,}$";
+        public string LastName = "^[A-Z]{1}[a-z]{2,}$";
+        public string Email= "^[abc]+([.,-][A-Za-z0-9]+)*[@][bl]+[.][co]+([.][a-zA-Z]+)?$";
+        //^[a-zA-Z0-9]+([.,-][A-Za-z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]+)?$
+        //abc.xyz@bl.co.in abc,bl,co mandatory
+
         public void ValidateFirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, FirstName))
@@ -32,6 +36,17 @@ namespace Regexproblem
             else
             {
                 Console.WriteLine("{0} is Invalid ", lastName);
+            }
+        }
+        public void ValidateEmail(string email)
+        {
+            if (Regex.IsMatch(email, Email))
+            {
+                Console.WriteLine("{0} is Valid ", email);
+            }
+            else
+            {
+                Console.WriteLine("{0} is Invalid ", email);
             }
         }
     }
