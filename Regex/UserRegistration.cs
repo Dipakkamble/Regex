@@ -14,6 +14,7 @@ namespace Regexproblem
         public string LastName = "^[A-Z]{1}[a-z]{2,}$";
         public string Email= "^[abc]+([.,-][A-Za-z0-9]+)*[@][bl]+[.][co]+([.][a-zA-Z]+)?$";
         public string MobileNumber = "^91[ ]*[6-9]{1}[0-9]{9}$";
+        public string Password = "[a-zA-Z0-9]{8}$";
         //^[a-zA-Z0-9]+([.,-][A-Za-z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]+)?$
         //abc.xyz@bl.co.in abc,bl,co mandatory
 
@@ -59,6 +60,17 @@ namespace Regexproblem
             else
             {
                 Console.WriteLine("{0} is Invalid ", mobilenumber);
+            }
+        }
+        public void ValidatePassword(string password)
+        {
+            if (Regex.IsMatch(password, Password))
+            {
+                Console.WriteLine("{0} is Valid ", password);
+            }
+            else
+            {
+                Console.WriteLine("{0} is Invalid ", password);
             }
         }
     }
