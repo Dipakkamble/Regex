@@ -14,7 +14,7 @@ namespace RegexProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the option below:");
-            Console.WriteLine("1:validate first name\n2:validate last name\n3:validate email\n4:validate mobile number\n5:validate password\n6:Validate password At least one upper case\n7:Validate Password at least One Numeric");
+            Console.WriteLine("1:validate first name\n2:validate last name\n3:validate email\n4:validate mobile number\n5:validate password\n6:Validate password At least one upper case\n7:Validate Password at least One Numeric\n8:Validate password one special charater");
             int option = Convert.ToInt32(Console.ReadLine());
             UserRegistration userRegistration = new UserRegistration();
             switch (option) {
@@ -52,6 +52,11 @@ namespace RegexProblem
                     Console.Write("Enter the password :");
                     string password2 = Console.ReadLine();
                     userRegistration.ValidatePassword(password2);
+                    break;
+                case 8:
+                    Console.Write("Enter the password :");
+                    string password3 = Console.ReadLine();
+                    userRegistration.ValidatePassword(password3);
                     break;
 
             }
